@@ -1,27 +1,34 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // Arquivo que guarda info do build incremental (acelera recompilações)
+    "target": "ESNext", // Define a versão do JavaScript de saída (ESNext = última)
+    "useDefineForClassFields": true, // Usa `define` em vez de `assign` para declarar campos de classe (mais moderno)
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // Tipagens inclusas no projeto (ES2022 + APIs de navegador)
+
+    "module": "ESNext", // Define o tipo de módulo gerado (ESNext usa `import/export`)
+    "skipLibCheck": true, // Ignora checagem de tipos em arquivos da node_modules (melhora performance)
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "moduleResolution": "bundler", // Resolve módulos do jeito que o bundler moderno faz (como Vite/webpack)
+    "allowImportingTsExtensions": true, // Permite importar arquivos com extensão `.ts`, `.tsx`
+    "verbatimModuleSyntax": true, // Mantém `import/export` exatamente como no código (não converte para CommonJS etc)
+    "moduleDetection": "force", // Força tratar arquivos como módulos mesmo sem `import`/`export`
+    "noEmit": true, // Não gera arquivos JS na build do TypeScript (útil se bundler cuida disso)
+    "jsx": "react-jsx", // Suporte a JSX com transformações automáticas (sem precisar importar `React`)
+
+    /* Alias support */
+    "baseUrl": ".", // Define a raiz do projeto para resolver caminhos relativos
+    "paths": {
+      "@/*": ["src/*"] // Cria um alias `@/` que aponta para `src/`
+    },
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "strict": true, // Ativa todas as verificações de tipo mais rigorosas
+    "noUnusedLocals": true, // Erro se variáveis locais não forem usadas
+    "noUnusedParameters": true, // Erro se parâmetros de função não forem usados
+    "erasableSyntaxOnly": true, // Garante que apenas sintaxe apagável em tempo de compilação seja usada (ajuda com desempenho)
+    "noFallthroughCasesInSwitch": true, // Erro se faltar `break` entre casos do `switch`
+    "noUncheckedSideEffectImports": true // Impede imports que só produzem efeitos colaterais sem serem usados
   },
-  "include": ["src"]
+  "include": ["src"] // Diz para o TS incluir os arquivos dentro da pasta `src/`
 }
