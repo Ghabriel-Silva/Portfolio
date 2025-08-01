@@ -10,7 +10,7 @@ function App() {
       <Button variant="outline" onClick={toggleColorMode}>
         Toggle Mode
       </Button>
-      <Avatar description="nada demias" image="fnfdndjfndjfd" name="TGabriel silva"/>
+      <Avatar description="nada demias" image="nenhuma" name="TGabriel silva"/>
     </Box>
 
   )
