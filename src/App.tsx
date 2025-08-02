@@ -1,18 +1,23 @@
-import { Button, Box} from "@chakra-ui/react"
-import { useColorMode } from "@/components/ui/color-mode"
-import Avatar from "./componentsPage/shared/Avatar"
+//Componentes do chakra ui
+import { Box } from "@chakra-ui/react"
+
+//Color mode
+import AvatarUser from "@/componentsPage/shared/Avatar"
+
+//Images
+import imgAvatar from "@/assets/my-notion-face-transparent-white.png"
+
+//icons 
+import { ColorModeButton } from "@/components/ui/color-mode"
 
 
 function App() {
-  const { toggleColorMode } = useColorMode()
   return (
     <Box>
-      <Button variant="outline" onClick={toggleColorMode}>
-        Toggle Mode
-      </Button>
-      <Avatar description="nada demias" image="nenhuma" name="TGabriel silva"/>
-    </Box>
+      <ColorModeButton />
+      <AvatarUser description="PORTFÓLIO 2025" image={imgAvatar} name="Gabriel silva" />
 
+    </Box>
   )
 }
 
