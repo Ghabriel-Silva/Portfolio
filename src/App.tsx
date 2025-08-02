@@ -1,22 +1,15 @@
 //Componentes do chakra ui
 import { Box } from "@chakra-ui/react"
 
-//Color mode
-import AvatarUser from "@/componentsPage/shared/Avatar"
-
-//Images
-import imgAvatar from "@/assets/my-notion-face-transparent-white.png"
-
-//icons 
-import { ColorModeButton } from "@/components/ui/color-mode"
-
+import Header from "@/componentsPage/Header"
 
 function App() {
   return (
-    <Box>
-      <ColorModeButton />
-      <AvatarUser description="PORTFÓLIO 2025" image={imgAvatar} name="Gabriel silva" />
-
+    <Box 
+      px={{base: "16px", md:"32px", lg:"144px"}}
+      py="8"
+    >
+      <Header />
     </Box>
   )
 }

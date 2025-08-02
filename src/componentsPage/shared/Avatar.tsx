@@ -1,20 +1,19 @@
 import { Avatar, HStack, Stack, Text, Circle, Float, Icon } from "@chakra-ui/react"
 
 //Icons
-import { CircleCheck } from 'lucide-react';
+import { FaCheckCircle } from "react-icons/fa";
 
 
 interface Props {
   name: string
   image: string
   description?: string
-
 }
 
 const AvatarUser = ({ name, description, image }: Props) => {
   return (
-    <Stack>
-      <HStack gap={3}>
+    <Stack >
+      <HStack gap={3} >
         <Avatar.Root>
           <Avatar.Fallback name={name} />
           <Avatar.Image src={image} />
@@ -31,7 +30,7 @@ const AvatarUser = ({ name, description, image }: Props) => {
           <HStack>
             <Text fontWeight="medium">{name}</Text>
             <Icon size="sm" color="blue.500">
-              <CircleCheck />
+              <FaCheckCircle />
             </Icon>
           </HStack>
           {description &&
