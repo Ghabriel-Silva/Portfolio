@@ -1,7 +1,8 @@
 //componentes 
 import AvatarUser from "@/componentsPage/shared/Avatar"
 import { RxHamburgerMenu } from "react-icons/rx";
-import {Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text } from "@chakra-ui/react"
+import { Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text } from "@chakra-ui/react"
+
 
 //Color mode 
 import { ColorModeButton } from "@/components/ui/color-mode"
@@ -12,24 +13,34 @@ import imgAvatar from "@/assets/my-notion-face-transparent-white.png"
 
 import { Flex } from "@chakra-ui/react"
 
-type Props = {}
-
-function Header({ }: Props) {
+function Header() {
 
     const [isMobile] = useMediaQuery(["(max-width: 650px)"]);
 
+    const linkBaseStyle = {
+        textStyle: "sm",
+        fontWeight: "normal",
+        display: "inline-block",
+        textDecoration: "none",
+        listStyleType: "none",
+        _focus: { boxShadow: "none", outline: "none" },
+        _hover: { color: "purple.500" },
+        _active: { color: "purple.700" },
+    };
+
+   
     const navLinks = (
-    <Stack
-        direction={isMobile? "column" : "row"}
-        gap={9}
-    >
-        <Link textStyle="sm" fontWeight="normal" href="#">Home</Link>
-        <Link textStyle="sm" fontWeight="normal" href="#">Projetos</Link>
-        <Link textStyle="sm" fontWeight="normal" href="#">Skills</Link>
-        <Link textStyle="sm" fontWeight="normal" href="#">Blog</Link>
-        <Link textStyle="sm" fontWeight="normal" href="#">Contato</Link>
-    </Stack>
-)
+        <Stack
+            direction={isMobile ? "column" : "row"}
+            gap={9}
+        >
+            <Link {...linkBaseStyle} href="#"> Home</Link>
+            <Link {...linkBaseStyle} href="#">Projetos</Link>
+            <Link {...linkBaseStyle} href="#">Skills</Link>
+            <Link {...linkBaseStyle} href="#">Blog</Link>
+            <Link {...linkBaseStyle} href="#">Contato</Link>
+        </Stack>
+    )
     return (
         <Flex
             justify="space-between"
@@ -61,7 +72,7 @@ function Header({ }: Props) {
                                         </Text>
                                     </Drawer.Footer>
                                     <Drawer.CloseTrigger asChild>
-                                        <CloseButton size="sm" />
+                                        <CloseButton size="lg" />
                                     </Drawer.CloseTrigger>
                                 </Drawer.Content>
                             </Drawer.Positioner>

@@ -7,7 +7,7 @@ function App() {
   return (
     <Box 
       px={{base: "16px", md:"32px", lg:"144px"}}
-      py="8"
+      py="4"
     >
       <Header />
     </Box>
