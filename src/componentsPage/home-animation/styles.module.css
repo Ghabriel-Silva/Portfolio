@@ -1,0 +1,130 @@
+.text_changer {
+    height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 60px;
+    box-sizing: content-box;
+}
+
+.intro_text {
+    margin-top: -14px;
+
+}
+
+.roles_container {
+    height: 90px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.role {
+    font-weight: bolder;
+    display: block;
+    height: 100%;
+    line-height: 1.3;
+    padding-left: 15px;
+    background: linear-gradient(to right, #01BBEC, #363AE7, #9150FE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: role-change 4s infinite;
+}
+
+@keyframes role-change {
+    10% {
+        transform: translateY(-102%);
+    }
+
+    25% {
+        transform: translateY(-100%);
+    }
+
+    35% {
+        transform: translateY(-202%);
+    }
+
+    50% {
+        transform: translateY(-200%);
+    }
+
+    60% {
+        transform: translateY(-302%);
+    }
+
+    75% {
+        transform: translateY(-300%);
+    }
+
+    85% {
+        transform: translateY(-402%);
+    }
+
+    100% {
+        transform: translateY(-400%);
+    }
+}
+
+@media (max-width: 768px) {
+    .text_changer {
+        font-size: 45px;
+        padding: 5px;
+    }
+
+    .roles_container {
+        height: 65px;
+    }
+
+    .role {
+        padding-left: 8px;
+    }
+
+    .intro_text {
+        margin-top: -6px;
+    }
+
+}
+
+@media (max-width: 468px) {
+    .text_changer {
+        font-size: 48px;
+        flex-direction: column;
+        padding: 5px;
+        height: 145px;
+    }
+
+    .roles_container {
+        height: 80px;
+        width: auto;
+        text-align: center;
+    }
+
+    .role {
+        padding-left: 8px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .text_changer {
+        font-size: 38px;
+        padding: 5px;
+        flex-direction: column;
+        height: 110px;
+    }
+
+    .roles_container {
+        height: 55px;
+        width: auto;
+        text-align: center;
+    }
+
+    .role {
+        padding-left: 8px;
+    }
+
+}
