@@ -32,7 +32,9 @@ function Header() {
     const navLinks = (
         <Stack
             direction={isMobile ? "column" : "row"}
-            gap={9}
+            gap={isMobile ? 12 : 9}
+            mt={isMobile ? 8: 0}
+            textAlign={isMobile ? "center" : "center"}
         >
             <Link {...linkBaseStyle} href="#"> Home</Link>
             <Link {...linkBaseStyle} href="#">Projetos</Link>
@@ -45,6 +47,7 @@ function Header() {
         <Flex
             justify="space-between"
             align='center'
+            
         >
             <AvatarUser description="PORTFÓLIO 2025" image={imgAvatar} name="Gabriel silva" />
             {isMobile ? (

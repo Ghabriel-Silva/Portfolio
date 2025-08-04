@@ -2,6 +2,7 @@
 import { Box } from "@chakra-ui/react"
 
 import Header from "@/componentsPage/Header"
+import TextAnimation from "@/componentsPage/shared/TextAnimation"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       py="4"
     >
       <Header />
+      <TextAnimation/>
     </Box>
   )
 }
