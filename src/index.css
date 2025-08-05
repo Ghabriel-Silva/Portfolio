@@ -1,0 +1,6 @@
+.bg{
+    background-image: url('./assets/header-img.png');
+   background-repeat: no-repeat;
+  background-position: center top; /* centraliza horizontalmente e fica alinhado no topo */
+  background-size: contain; /* mantém o tamanho da imagem proporcional dentro do container */
+}
