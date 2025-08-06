@@ -1,4 +1,7 @@
-import { Box, Tag,  HStack , Image } from "@chakra-ui/react"
+import { Box, Tag, HStack, Image } from "@chakra-ui/react"
+
+
+
 import iconBehance from "@/assets/iconsCards/IconBehance.png";
 import iconCanva from "@/assets/iconsCards/IconCanvaa.png";
 import iconGit from "@/assets/iconsCards/IconGitHub.png";
@@ -12,44 +15,50 @@ import iconReact from "@/assets/iconsCards/Iconreact.png";
 import iconVSCode from "@/assets/iconsCards/Iconvs_code.png";
 import iconNodeJs from "@/assets/iconsCards/nodejs.png";
 
+const technologiesCatalog = {
+    behance: { src: iconBehance, alt: "Behance" },
+    canva: { src: iconCanva, alt: "Canva" },
+    github: { src: iconGit, alt: "GitHub" },
+    photoshop: { src: iconPhotoshop, alt: "Photoshop" },
+    css: { src: iconCSS, alt: "CSS3" },
+    figma: { src: iconFigma, alt: "Figma" },
+    Html: { src: iconHTML, alt: "HTML5" },
+    js: { src: iconJS, alt: "JavaScript" },
+    notion: { src: iconNotion, alt: "Notion" },
+    react: { src: iconReact, alt: "React" },
+    vscodee: { src: iconVSCode, alt: "VS Code" },
+    nodeJs: { src: iconNodeJs, alt: "Node js" },
+} as const 
 
+type TechnologyKey = keyof typeof technologiesCatalog;  // "Crie um tipo com as chaves do objeto technologiesCatalog."
+//type TechnologyKey = "html" | "css" | "js";
 
-
-interface Props {
+interface CardProps {
     defaultText?: string
-    hoverText?: string
+    technologies?:TechnologyKey[]
 }
 
-const icons = [
-  { src: iconBehance, alt: "Behance" },
-  { src: iconCanva, alt: "Canva" },
-  { src: iconGit, alt: "GitHub" },
-  { src: iconPhotoshop, alt: "Photoshop" },
-  { src: iconCSS, alt: "CSS3" },
-  { src: iconFigma, alt: "Figma" },
-  { src: iconHTML, alt: "HTML5" },
-  { src: iconJS, alt: "JavaScript" },
-  { src: iconNotion, alt: "Notion" },
-  { src: iconReact, alt: "React" },
-  { src: iconVSCode, alt: "VS Code" },
-  { src: iconNodeJs, alt: "Node js" },
-];
-
-function IconsDescription({ defaultText = "Projeto", hoverText = "Ver Projeto" }: Props) {
+function IconsDescription({ defaultText = "Projeto", technologies }: CardProps) {
 
     return (
-        <Box>
-            <HStack gap={4} flexWrap="wrap">
-                 {icons.map((icon, index)=>(
-                    <Image
-                        key={index}              
-                        src={icon.src}
-                        alt={`icone ${icon.alt}`}
-                        boxSize="20px"
-                        
-                    ></Image>
-                 ))}
+        <Box  gap="10">
+            {technologies && technologies.length > 0 && (
+            <HStack gap={2} flexWrap="wrap" py="1" >
+                {technologies.map((techKey)=>{
+                    const tech = technologiesCatalog[techKey]
+                    return(
+                        <Image
+                            key={techKey}
+                            src={tech.src}
+                            alt={tech.alt}
+                            boxSize="20px"
+                        >
+                            
+                        </Image>
+                    )
+                })}
             </HStack>
+            )}
             <Tag.Root bg="purple.emphasized" color="white" size="lg" variant="solid">
                 <Tag.Label>{defaultText} </Tag.Label>
             </Tag.Root>
