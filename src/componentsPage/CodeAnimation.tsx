@@ -1,6 +1,6 @@
 import { Box, Tabs, Text } from "@chakra-ui/react"
 import Typewriter from 'typewriter-effect';
-type Props = {}
+
 
 function CodeLines({ n }: { n: number }) {
   return (
@@ -14,7 +14,7 @@ function CodeLines({ n }: { n: number }) {
   );
 }
 
-function CodeAnimation({ }: Props) {
+function CodeAnimation() {
     return (
         <Box
             position="relative"

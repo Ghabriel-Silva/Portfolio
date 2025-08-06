@@ -4,6 +4,9 @@ import { Box } from "@chakra-ui/react"
 import Header from "@/componentsPage/Header"
 import Home from "@/componentsPage/home-animation/home"
 import CodeAnimation from "@/componentsPage/CodeAnimation"
+import TitleDescription from "@/componentsPage/TitleDescription"
+import TitleDescriptionCard from "@/componentsPage/card/TitleDescriptionCard"
+import IconsDescription from "@/componentsPage/card/IconsDescription"
 
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
       <Header />
       <Home />
       <CodeAnimation/>
+      <TitleDescription title="Projetos." text="Meus projetos são focados em design e desenvolvimento, sempre alinhados com os princípios da boa programação."/>
+      <TitleDescriptionCard text="Site maquiadora"  title="Site maquiadora "/>
+      <IconsDescription defaultText="Projeto" hoverText="nadademias"/> 
     </Box>
   )
 }
