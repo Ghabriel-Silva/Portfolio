@@ -3,15 +3,15 @@ import Typewriter from 'typewriter-effect';
 
 
 function CodeLines({ n }: { n: number }) {
-  return (
-    <Box pr="4" userSelect="none" pt="4px">
-      {Array.from({ length: n }, (_, i) => ( // 🔹 Array.from cria um array a partir de um valor "iterável"; o primeiro argumento { length: n } define o tamanho com valores undefined, e o segundo é uma função de mapeamento com (_, i), onde _ é o valor atual (ignorado) e i é o índice de 0 até n - 1.
-        <Text key={i} color="gray.500" fontSize="sm">
-          {i + 1}
-        </Text>
-      ))}
-    </Box>
-  );
+    return (
+        <Box pr="4" userSelect="none" pt="4px">
+            {Array.from({ length: n }, (_, i) => ( // 🔹 Array.from cria um array a partir de um valor "iterável"; o primeiro argumento { length: n } define o tamanho com valores undefined, e o segundo é uma função de mapeamento com (_, i), onde _ é o valor atual (ignorado) e i é o índice de 0 até n - 1.
+                <Text key={i} color="gray.500" fontSize="sm">
+                    {i + 1}
+                </Text>
+            ))}
+        </Box>
+    );
 }
 
 function CodeAnimation() {
@@ -22,7 +22,7 @@ function CodeAnimation() {
             h='340px'
         >
             <Box
-                h={{sm:"340px", md:"334px", lg:"334px"}}
+                h={{ sm: "340px", md: "334px", lg: "334px" }}
                 w={{ base: "100%", md: "90%", lg: "85%" }}
                 position="absolute"
                 top="60%"
@@ -30,7 +30,7 @@ function CodeAnimation() {
                 transform="translate(-50%, -50%)"
                 rounded="md"
             >
-                
+
 
                 <Tabs.Root lazyMount unmountOnExit defaultValue="developer" borderTopRadius="2xl" bg="bg.muted" variant={"outline"} width="full" h="full" shadow="md">
                     <Tabs.List pt="4" pl={{ base: "0px", md: "4", lg: "4" }} bg="bg.subtle" borderTopRadius="2xl">
@@ -68,10 +68,12 @@ function CodeAnimation() {
                                     .pauseFor(100)
                                     .typeString(`<span style="color:#92310A;">}</span>`)
                                     .start();
+
                             }}
                             options={{
                                 delay: 20,
                                 cursor: "|",
+                                loop: true,
                             }}
                         />
                     </Tabs.Content>
@@ -103,6 +105,7 @@ function CodeAnimation() {
                             options={{
                                 delay: 20,
                                 cursor: "|",
+                                loop: true,
                             }}
                         />
 
@@ -135,6 +138,7 @@ function CodeAnimation() {
                             options={{
                                 delay: 20,
                                 cursor: "|",
+                                loop: true,
                             }}
                         />
                     </Tabs.Content>

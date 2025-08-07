@@ -25,14 +25,14 @@ interface PropsImage {
 
 function imgContain({ imagem }: PropsImage) {
   return (
-    <Box >
+    <Box    borderTopRadius="lg" cursor="pointer"> 
       {imagem.map((imgKey) => {
         const imgPropiedades = image[imgKey]
         return (
           <Image
-            objectFit="contain"    // Faz a imagem caber inteira mantendo proporção
-            objectPosition="center" // Centraliza a imagem dentro do container
-            width="100%"           // Largura total do container
+            objectFit="contain"   
+            objectPosition="center" 
+            width="100%"           
             height="100%"
             key={imgKey}
             src={imgPropiedades.src}
