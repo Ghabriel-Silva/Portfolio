@@ -1,4 +1,4 @@
-import { Box, Tag, HStack, Image } from "@chakra-ui/react"
+import {Stack, Tag, HStack, Image } from "@chakra-ui/react"
 
 
 
@@ -30,7 +30,7 @@ const technologiesCatalog = {
     nodeJs: { src: iconNodeJs, alt: "Node js" },
 } as const 
 
-type TechnologyKey = keyof typeof technologiesCatalog;  // "Crie um tipo com as chaves do objeto technologiesCatalog."
+export type TechnologyKey = keyof typeof technologiesCatalog;  // "Crie um tipo com as chaves do objeto technologiesCatalog."
 //type TechnologyKey = "html" | "css" | "js";
 
 interface CardProps {
@@ -41,9 +41,9 @@ interface CardProps {
 function IconsDescription({ defaultText = "Projeto", technologies }: CardProps) {
 
     return (
-        <Box  gap="10">
+        <Stack  gap="1">
             {technologies && technologies.length > 0 && (
-            <HStack gap={2} flexWrap="wrap" py="1" >
+            <HStack gap="2" flexWrap="wrap"  >
                 {technologies.map((techKey)=>{
                     const tech = technologiesCatalog[techKey]
                     return(
@@ -51,7 +51,7 @@ function IconsDescription({ defaultText = "Projeto", technologies }: CardProps) 
                             key={techKey}
                             src={tech.src}
                             alt={tech.alt}
-                            boxSize="20px"
+                            boxSize="16px"
                         >
                             
                         </Image>
@@ -59,10 +59,10 @@ function IconsDescription({ defaultText = "Projeto", technologies }: CardProps) 
                 })}
             </HStack>
             )}
-            <Tag.Root bg="purple.emphasized" color="white" size="lg" variant="solid">
+            <Tag.Root bg="purple.emphasized" color="white" size="lg" variant="solid" w="fit-content">
                 <Tag.Label>{defaultText} </Tag.Label>
             </Tag.Root>
-        </Box>
+        </Stack>
     )
 }
 

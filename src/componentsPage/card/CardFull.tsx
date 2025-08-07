@@ -1,18 +1,33 @@
-import { Stack} from "@chakra-ui/react"
+//Importação chakra ui
+import {Flex, Stack} from "@chakra-ui/react"
 
+//Importação de componentes
 import TitleDescriptionCard from "@/componentsPage/card/TitleDescriptionCard"
 import IconsDescription from "@/componentsPage/card/IconsDescription"
 import ImgContain from "@/componentsPage/card/imgContain"
 
-type Props = {}
+//Importação do Tipo literal 
+import type {TechnologyKey} from "@/componentsPage/card/IconsDescription"
+import type {imageProjetos} from "@/componentsPage/card/imgContain"
 
-function CardFull({ }: Props) {
+interface Props {
+    imgCard: imageProjetos[]
+    iconDescriptionText: string
+    iconDescriptionTechnologies: TechnologyKey[]
+    titleDescription:string
+    textDescription:string
+    
+}
+
+function CardFull({ imgCard, iconDescriptionText,iconDescriptionTechnologies, titleDescription,textDescription }: Props) {
     return (
-        <Stack py="10px">
-            <TitleDescriptionCard text="Site maquiadora" title="Site maquiadora " />
-            <IconsDescription defaultText="Projeto" technologies={["react", "notion", "behance"]} />
-           <ImgContain imagem={["maquiadora", "gappelt", "portfolio", "uxui"]}/>
-        </Stack>
+        <Flex  bg="bg.muted" direction="column" minW={{base:"220px", md:"270px"}} flex="1"  borderRadius="lg" shadow="sm"     >
+           <ImgContain imagem={imgCard}/>
+            <Stack gap="2" p="4"  borderBottomRadius="lg" >
+                <IconsDescription defaultText={iconDescriptionText} technologies={iconDescriptionTechnologies} />
+                <TitleDescriptionCard title={titleDescription} text={textDescription}  />
+            </Stack>
+        </Flex>
     )
 }
 

@@ -8,8 +8,8 @@ interface Props {
 
 function TitleDescription({ title, text }: Props) {
     return (
-        <Stack mt="90px" >
-            <Heading size="5xl" fontWeight="bold">{title}</Heading>
+        <Stack >
+            <Heading size={{base:"3xl",md:"5xl"}} fontWeight="bold">{title}</Heading>
             <Text textStyle="md" color="gray.fg" maxW="460px">{text}</Text>
         </Stack>
     )
