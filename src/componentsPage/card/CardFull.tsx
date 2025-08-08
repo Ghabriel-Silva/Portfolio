@@ -21,7 +21,7 @@ interface Props {
 
 function CardFull({ imgCard, iconDescriptionText, iconDescriptionTechnologies, titleDescription, textDescription }: Props) {
     return (
-        <Flex bg="bg.muted" direction="column" minW={{ base: "220px", md: "270px" }} flex="1" borderRadius="lg" shadow="sm" transition="all 0.3s ease"
+        <Flex bg="bg.muted" direction="column" minW={{ base: "220px", md: "290px" }} flex="1" borderRadius="lg" shadow="sm" transition="all 0.3s ease"
             _hover={{
                 transform: "translateY(-4px) rotate(-0.5deg)",
                 boxShadow: "xl",

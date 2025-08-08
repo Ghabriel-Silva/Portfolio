@@ -5,6 +5,8 @@ import Header from "@/componentsPage/Header"
 import Home from "@/componentsPage/home-animation/home"
 import CodeAnimation from "@/componentsPage/CodeAnimation"
 import CardContainer from "@/componentsPage/card/CardContainer"
+import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Home />
       <CodeAnimation />
       <CardContainer />
+      <ContainerSkils />
     </Box>
   )
 }
