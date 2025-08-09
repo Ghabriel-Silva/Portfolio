@@ -34,22 +34,9 @@ export const projetos: Projeto[] = [
   {
     imgCard: ["qualis"],
     titleDescription: "Qualis 5S",
-    textDescription: "Ui/Sof (em desenvolvimento)",
+    textDescription: "Ui/Software (em desenvolvimento)",
     iconDescriptionText: "Ver Projeto",
     iconDescriptionTechnologies: ["Html", "css", "js", "react", "nodeJs"],
   },
-  {
-    imgCard: ["uxui"],
-    titleDescription: "Gappelt",
-    textDescription: "Prototyping",
-    iconDescriptionText: "Ver Projeto",
-    iconDescriptionTechnologies: ["figma", "photoshop", "canva", "notion"],
-  },
-  {
-    imgCard: ["portfolio"],
-    titleDescription: "Portfólio",
-    textDescription: "Desenvolvimento",
-    iconDescriptionText: "Ver Projeto",
-    iconDescriptionTechnologies: ["figma", "photoshop", "canva", "notion"],
-  }
+  
 ];

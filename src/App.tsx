@@ -8,21 +8,28 @@ import CardContainer from "@/componentsPage/card/CardContainer"
 import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
 
 
+
+
 function App() {
   return (
-    <Box
-      maxW="1536px"
-      w="100%"
-      mx="auto"
-
-      px={{ base: "16px", md: "32px", lg: "144px" }}
-      py="4"
-    >
+    <Box maxW="1536px" w="100%" mx="auto" px={{ base: "16px", md: "32px", lg: "144px" }} py="4">
       <Header />
-      <Home />
-      <CodeAnimation />
-      <CardContainer />
-      <ContainerSkils />
+
+      <section id="home"  style={{ scrollMarginTop: "72px" }} >
+        <Home />
+      </section>
+
+      <section  >
+        <CodeAnimation />
+      </section>
+
+      <section id="projetos"  style={{ scrollMarginTop: "72px" }}>
+        <CardContainer />
+      </section>
+
+      <section id="skills"  style={{ scrollMarginTop: "72px" }}>
+        <ContainerSkils />
+      </section>
     </Box>
   )
 }

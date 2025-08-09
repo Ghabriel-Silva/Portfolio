@@ -31,25 +31,26 @@ interface SkillsProps {
 export const skills: SkillsProps[] = [
 
     {
-        chave: "1",
+        chave: "01",
         imgIcon: "config",
         title: "Ux designer",
         text: "Pesquisa e criação de experiências focadas no usuário, alinhando usabilidade, funcionalidade e soluções estratégicas.",
     },
     {
-        chave: "2",
+        chave: "02",
         imgIcon: "tag",
         title: "Desenvolvimento",
         text: "Codificação de interfaces usando tecnologias modernas, como JS, React,  com foco em responsividade e desempenho.",
     }, 
      {
-        chave: "3",
+        chave: "03",
         imgIcon: "tela",
         title: "UI Design",
         text: "Desenvolvimento de interfaces visuais atrativas e intuitivas, garantindo identidade da marca e fácil navegação.",
+       
     }, 
      {
-        chave: "4",
+        chave: "04",
         imgIcon: "caneta",
         title: "Web Designer",
         text: "Criação de sites responsivos com design atraente, usabilidade e performance otimizada.",

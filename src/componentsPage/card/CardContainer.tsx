@@ -9,8 +9,7 @@ function CardContainer({ }: Props) {
     return (
         <Stack mt="90px" gap="8">
             <TitleDescription title="Projetos." text="Meus projetos são focados em design e desenvolvimento, sempre buscando criar soluções reais para o usuário." />
-
-            <Flex wrap="wrap" gap="10" bg="bg.muted" justify="center" p="5" borderRadius="2xl">
+            <Flex wrap="wrap" gap="10" bg="bg.subtle" justify="center" p="5" borderRadius="2xl">
                 {projetos.map((projeto, index) => (
                     <CardFull
                         key={index}

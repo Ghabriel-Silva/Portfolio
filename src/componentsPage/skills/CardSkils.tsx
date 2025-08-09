@@ -16,7 +16,19 @@ interface PropsSkils {
 
 function CardSkils({ chave, imgIcon, text, title, imagem }: PropsSkils) {
     return (
-        <Stack bg="bg.muted" direction="column" minW={{ base: "270px", md: "290px" }} flex="1" borderRadius="xl" p="7" >
+        <Stack bg="bg.muted" direction="column" minW={{ base: "220px", md: "290px" }} flex="1" borderRadius="xl" p="7"
+            cursor="pointer"
+            transition="transform 0.3s ease, box-shadow 0.3s ease"
+            _hover={{
+                transform: "translateY(-4px) scale(1.01)",
+                boxShadow: "xl",
+            }}
+            _active={{
+                transform: "translateY(-4px) scale(0.98)",
+                boxShadow: "md",
+            }}
+
+        >
             <HStack position="relative">
                 <Text fontWeight="normal" letterSpacing="tight" lineHeight="1" fontSize="9xl" h="auto" mt="-4px">{chave}</Text>
                 <Image
