@@ -1,6 +1,6 @@
 //componentes 
 import AvatarUser from "@/componentsPage/shared/Avatar"
-import { useState } from "react";
+// import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text, useToken } from "@chakra-ui/react"
 
@@ -27,7 +27,7 @@ function Header() {
     const [isMobile] = useMediaQuery(["(max-width: 650px)"]);
 
     //Estado para o drawer 
-     const [drawer, SetDrawer] = useState<boolean>(false)
+    //  const [drawer, SetDrawer] = useState<boolean>(false)
 
      
 

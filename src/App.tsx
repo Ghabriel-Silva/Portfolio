@@ -6,6 +6,7 @@ import Home from "@/componentsPage/home-animation/home"
 import CodeAnimation from "@/componentsPage/CodeAnimation"
 import CardContainer from "@/componentsPage/card/CardContainer"
 import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
+import Acordeao from "./componentsPage/Acordeao"
 
 
 
@@ -29,6 +30,9 @@ function App() {
 
       <section id="skills"  style={{ scrollMarginTop: "72px" }}>
         <ContainerSkils />
+      </section>
+      <section  id="acordeao" style={{ scrollMarginTop: "72px" }}>
+        <Acordeao />
       </section>
     </Box>
   )
