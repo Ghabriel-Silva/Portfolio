@@ -14,7 +14,7 @@ import iconNodeJs from "@/assets/iconsCards/nodejs.png";
 import iconHandlebars from "@/assets/iconsCards/handlebars.png";
 import iconMysql from "@/assets/iconsCards/Mysql_logo.png";
 import iconTypescript from "@/assets/iconsCards/typescript.png";
-import iconTypeOrm from "@/assets/iconsCards/typeorm.png";
+import iconTypeOrm from "@/assets/iconsCards/typeorm-icon-colored.png";
 import iconChakraUi from "@/assets/iconsCards/chakra.png";
 
 const technologiesCatalog = {

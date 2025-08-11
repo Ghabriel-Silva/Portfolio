@@ -1,6 +1,6 @@
 //componentes 
 import AvatarUser from "@/componentsPage/shared/Avatar"
-// import { useState } from "react";
+import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text, useToken } from "@chakra-ui/react"
 
@@ -26,9 +26,14 @@ function Header() {
     //Definindo uma query para o mobile
     const [isMobile] = useMediaQuery(["(max-width: 650px)"]);
 
-    //Estado para o drawer 
-    //  const [drawer, SetDrawer] = useState<boolean>(false)
+    // Estado para o drawer 
+    const [open, setOpen] = useState(false)
 
+    //Estado para mudança de open to closet
+    function handleToCloset():void{
+        setOpen(false)
+        
+    }
 
 
     const linkBaseStyle = {
@@ -45,17 +50,16 @@ function Header() {
 
     const navLinks = (
         <Stack
-
             direction={isMobile ? "column" : "row"}
             gap={isMobile ? 12 : 9}
             mt={isMobile ? 8 : 0}
             textAlign={isMobile ? "center" : "center"}
         >
-            <Link {...linkBaseStyle} href="#home"> Home</Link>
-            <Link {...linkBaseStyle} href="#projetos">Projetos</Link>
-            <Link {...linkBaseStyle} href="#skills">Skills</Link>
-            <Link {...linkBaseStyle} href="#">Blog</Link>
-            <Link {...linkBaseStyle} href="#">Contato</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#home"> Home</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#projetos">Projetos</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#skills">Skills</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#">Blog</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#">Contato</Link>
         </Stack>
 
     )
@@ -79,7 +83,7 @@ function Header() {
             {isMobile ? (
                 <HStack>
                     <ColorModeButton />
-                    <Drawer.Root >
+                    <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}   >
                         <Drawer.Trigger asChild>
                             <Icon size="md">
                                 <RxHamburgerMenu />
