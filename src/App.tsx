@@ -6,7 +6,8 @@ import Home from "@/componentsPage/home-animation/home"
 import CodeAnimation from "@/componentsPage/CodeAnimation"
 import CardContainer from "@/componentsPage/card/CardContainer"
 import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
-import Acordeao from "./componentsPage/Acordeao"
+import Acordeao from "@/componentsPage/Acordeao"
+import RotatingIcons from "@/componentsPage/iconsAnimate/RotatingIcons"
 
 
 
@@ -22,6 +23,9 @@ function App() {
 
       <section  >
         <CodeAnimation />
+      </section>
+      <section  id="Rotating" style={{ scrollMarginTop: "72px" }}>
+        <RotatingIcons />
       </section>
 
       <section id="projetos"  style={{ scrollMarginTop: "72px" }}>
