@@ -1,4 +1,4 @@
-import { Stack, HStack, Text, Image, Heading, Box } from "@chakra-ui/react"
+import { Stack, HStack, Text, Image, Heading, Box, } from "@chakra-ui/react"
 import type { allImageSkills } from "@/componentsPage/skills/SkillsData"
 
 import { imagesSkills } from "@/componentsPage/skills/SkillsData"
@@ -13,6 +13,7 @@ interface PropsSkils {
     imagem?: allImageSkills
 
 }
+
 
 function CardSkils({ chave, imgIcon, text, title, imagem }: PropsSkils) {
     return (

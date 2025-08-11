@@ -38,11 +38,11 @@
 
 @keyframes role-change {
     10% {
-        transform: translateY(-102%);
+        transform: translateY(-100%);
     }
 
     25% {
-        transform: translateY(-100%);
+        transform: translateY(-102%);
     }
 
     35% {

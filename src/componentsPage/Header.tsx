@@ -29,7 +29,7 @@ function Header() {
     //Estado para o drawer 
     //  const [drawer, SetDrawer] = useState<boolean>(false)
 
-     
+
 
     const linkBaseStyle = {
         textStyle: "sm",
@@ -68,9 +68,9 @@ function Header() {
             left="0"
             width="100%"
             zIndex="1000"
-            bg={`${bgColor}B3`} 
+            bg={`${bgColor}B3`}
             backdropFilter="saturate(180%) blur(9px)"
-            px={6}
+            px={{ base: "16px", md: "32px", lg: "144px" }}
             py={4}
             h={HEADER_HEIGHT}
 

@@ -33,27 +33,27 @@ export const skills: SkillsProps[] = [
     {
         chave: "01",
         imgIcon: "config",
-        title: "Ux designer",
-        text: "Pesquisa e criação de experiências focadas no usuário, alinhando usabilidade, funcionalidade e soluções estratégicas.",
+        title: "Front-end",
+        text: "Criação de interfaces  utilizando Figma, HTML, CSS, JavaScript e TypeScript, React.",
     },
     {
         chave: "02",
         imgIcon: "tag",
-        title: "Desenvolvimento",
-        text: "Codificação de interfaces usando tecnologias modernas, como JS, React,  com foco em responsividade e desempenho.",
+        title: "Back-end",
+        text: "Implementação de APIs e serviços usando Node.js, Express e bancos de dados, integrando com front-end.",
     }, 
      {
         chave: "03",
         imgIcon: "tela",
-        title: "UI Design",
-        text: "Desenvolvimento de interfaces visuais atrativas e intuitivas, garantindo identidade da marca e fácil navegação.",
+        title: "UI/UX Design",
+        text: "Desenvolvimento de interfaces no Figma, criação de design systems e protótipos visuais consistentes.",
        
     }, 
      {
         chave: "04",
         imgIcon: "caneta",
-        title: "Web Designer",
-        text: "Criação de sites responsivos com design atraente, usabilidade e performance otimizada.",
+        title: "Controle de Versão",
+        text: "Gerenciamento de código com Git e GitHub, utilizando branches, pull requests e versionamento semântico.",
         imagem:"fundo"
     }
 ] 
