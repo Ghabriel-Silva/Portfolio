@@ -15,7 +15,7 @@ const image = {
   maquiadora: { src: imgmaquiadora, alt: "Imagem do projeto Ketlin Maquiadora" },
   portfolio: { src: imgportfólio, alt: "Imagem do projeto Portfólio" },
   uxui: { src: imgUxUI, alt: "Imagem do projeto UX/UI" },
-} as const;
+} as const; // congela o objeto para manter valores literais e chaves exatas.
 
 export type imageProjetos = keyof typeof image
 

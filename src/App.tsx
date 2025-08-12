@@ -1,6 +1,7 @@
 //Componentes do chakra ui
 import { Box } from "@chakra-ui/react"
 
+//importando componentes
 import Header from "@/componentsPage/Header"
 import Home from "@/componentsPage/home-animation/home"
 import CodeAnimation from "@/componentsPage/CodeAnimation"
@@ -8,7 +9,7 @@ import CardContainer from "@/componentsPage/card/CardContainer"
 import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
 import Acordeao from "@/componentsPage/Acordeao"
 import RotatingIcons from "@/componentsPage/iconsAnimate/RotatingIcons"
-
+import ContainerCardsBlogs from "@/componentsPage/blogCard/ContainerCardsBlogs"
 
 
 
@@ -37,6 +38,9 @@ function App() {
       </section>
       <section  id="acordeao" style={{ scrollMarginTop: "72px" }}>
         <Acordeao />
+      </section>
+      <section  id="cardsblogs" style={{ scrollMarginTop: "72px" }}>
+        <ContainerCardsBlogs />
       </section>
     </Box>
   )
