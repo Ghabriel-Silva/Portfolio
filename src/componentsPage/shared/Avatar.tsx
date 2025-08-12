@@ -4,13 +4,13 @@ import { Avatar, HStack, Stack, Text, Circle, Float, Icon } from "@chakra-ui/rea
 import { FaCheckCircle } from "react-icons/fa";
 
 
-interface Props {
+export interface AvatarProps {
   name: string
   image: string
   description?: string
 }
 
-const AvatarUser = ({ name, description, image }: Props) => {
+const AvatarUser = ({ name, description, image }: AvatarProps) => {
   return (
     <Stack >
       <HStack gap={3} >
