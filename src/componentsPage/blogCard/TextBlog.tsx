@@ -8,11 +8,11 @@ interface Conteudo {
 }
 const TextBlog = ({title, subtitle, description}:Conteudo) => {
   return (
-    <Stack>
-        <Heading>{title}</Heading>
-        <Stack>
-            <Text>{subtitle}</Text>
-            <Text>{description} </Text>
+    <Stack gap={6} >
+        <Heading  size="2xl" fontWeight={"medium"} >{title}</Heading>
+        <Stack gap={2} >
+            <Text textStyle={"sm"} fontWeight={"medium"} color={"blue.fg"} >{subtitle}</Text>
+            <Text textStyle={"md"} fontWeight={"light"} color={"gray.fg"}>{description} </Text>
         </Stack>
     </Stack>
   )

@@ -23,7 +23,7 @@ function CardFullBlog({
   description,
 }: PropsCardsBlogs) {
   return (
-    <Stack>
+    <Stack minW={"220px"} gap={7}>
       <ImgContain image={imageBlogCard} />
       <TextBlog title={titleBlogCard} subtitle={subtitleBlogCard} description={descriptionBlogCard} />
       <AvatarUser image={image} name={name} description={description} />

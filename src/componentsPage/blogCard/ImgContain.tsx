@@ -1,4 +1,4 @@
-import { Box, Image } from "@chakra-ui/react"
+import { Flex, Image } from "@chakra-ui/react"
 //Importação de images
 import imgBlogCoffee from "@/assets/imgBlog/coffe-padrao.png"
 import imgBlogLinguagem from "@/assets/imgBlog/porque-padrao.png"
@@ -25,14 +25,23 @@ interface PropsImagem {
 
 const ImgContain = ({ image }: PropsImagem) => {
     return (
-        <Box>
+        <Flex justify={"center"} align={"center"} overflow={"hidden"} >
             <Image
+                width={"100%"}
                 objectFit="cover"
+                height={"300px"}
                 objectPosition="center"
                 src={imageBlogs[image].src}
                 alt={imageBlogs[image].alt}
+                _hover={{ transform: "scale(1.2)" }}
+                _active={{ transform: "scale(1.2)" }}
+                transition="transform 1s ease"
+                tabIndex={0}
+                _focus={{ transform: "scale(1.2)" }}
+                cursor={"pointer"}
+
             />
-        </Box>
+        </Flex>
     )
 }
 
