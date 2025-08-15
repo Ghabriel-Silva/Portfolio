@@ -29,6 +29,7 @@ function ContainerCardsBlogs() {
                             image={card.image}
                             name={card.name}
                             description={card.description}
+                            linkBlogs={card.linkBlogs}
                         />
                     </Box>
 

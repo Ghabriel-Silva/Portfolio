@@ -14,7 +14,6 @@ export const imagesSkills = {
     config: { src: config, alt: "icone de configuração " },
     fundo: { src: fundo, alt: "icone de fundo" },
     tecnologia: { src: tecnologia, alt: "icone de tecnologia" },
-
 } as const
 
 export type allImageSkills = keyof typeof imagesSkills
@@ -45,7 +44,7 @@ export const skills: SkillsProps[] = [
      {
         chave: "03",
         imgIcon: "tela",
-        title: "UI/UX Design",
+        title: "UI Design",
         text: "Desenvolvimento de interfaces no Figma, criação de design systems e protótipos visuais consistentes.",
        
     }, 

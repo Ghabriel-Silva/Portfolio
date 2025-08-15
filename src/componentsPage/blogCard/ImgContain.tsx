@@ -25,7 +25,7 @@ interface PropsImagem {
 
 const ImgContain = ({ image }: PropsImagem) => {
     return (
-        <Flex justify={"center"} align={"center"} overflow={"hidden"} >
+        <Flex justify={"center"} align={"center"} overflow={"hidden"} w="100%" >
             <Image
                 width={"100%"}
                 objectFit="cover"

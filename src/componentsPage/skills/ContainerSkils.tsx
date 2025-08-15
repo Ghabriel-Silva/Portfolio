@@ -6,7 +6,7 @@ import { skills } from "@/componentsPage/skills/SkillsData"
 function ContainerSkils() {
     return (
         <Stack  mt="90px" gap="8" overflow="hidden">
-             <TitleDescription title="Habilidades." text="Minhas habilidades abrange desde da pesquisa até o deploy de um projeto." />
+             <TitleDescription title="Habilidades." text="Tenho habilidades voltadas para o design de interfaces e desenvolvimento fullStack" />
             <Flex wrap="wrap" gap="16" bg="bg.subtle" justify="center" p="5" borderRadius="xl" >
                 {skills.map((skill, index) => (
                     <CardSkils

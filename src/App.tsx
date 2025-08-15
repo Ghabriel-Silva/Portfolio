@@ -10,6 +10,7 @@ import ContainerSkils from "@/componentsPage/skills/ContainerSkils"
 import Acordeao from "@/componentsPage/Acordeao"
 import RotatingIcons from "@/componentsPage/iconsAnimate/RotatingIcons"
 import ContainerCardsBlogs from "@/componentsPage/blogCard/ContainerCardsBlogs"
+import Form from "@/componentsPage/formContato/Form"
 
 
 
@@ -41,6 +42,9 @@ function App() {
       </section>
       <section  id="cardsblogs" style={{ scrollMarginTop: "72px" }}>
         <ContainerCardsBlogs />
+      </section>
+      <section  id="form" style={{ scrollMarginTop: "72px" }}>
+        <Form />
       </section>
     </Box>
   )

@@ -7,11 +7,14 @@ import { FiMoon, FiSun } from 'react-icons/fi';
 
 
 
-export interface ColorModeProviderProps extends ThemeProviderProps {}
+export interface ColorModeProviderProps extends ThemeProviderProps { }
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
   return (
-    <ThemeProvider attribute="class" disableTransitionOnChange {...props} />
+    <ThemeProvider attribute="class" disableTransitionOnChange
+      defaultTheme="light" 
+      enableSystem={false} 
+      {...props} />
   )
 }
 
@@ -43,10 +46,10 @@ export function useColorModeValue<T>(light: T, dark: T) {
 
 export function ColorModeIcon() {
   const { colorMode } = useColorMode()
-  return colorMode === "dark" ? <FiMoon /> : <FiSun/>
+  return colorMode === "dark" ? <FiMoon /> : <FiSun />
 }
 
-interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {}
+interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> { }
 
 export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,
