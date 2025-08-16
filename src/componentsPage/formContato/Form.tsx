@@ -1,12 +1,13 @@
 import { Button, Field, Input, Stack, Textarea, Flex } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
 
+import { Toaster, toaster } from "@/components/ui/toaster"
+
 interface FormValues {
     name: string
     email: string
     message: string
 }
-
 
 function Form() {
     const {
@@ -16,22 +17,22 @@ function Form() {
     } = useForm<FormValues>()
 
     const onSubmit = async (data: FormValues) => {
-        try {
-            const res = await fetch("http://localhost:3001/send-email", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            })
-            const result = await res.json()
-            if (result.success) {
-                alert("mensagem enviada com sucesso!")
-                console.log(data)
-            }
-        } catch (err) {
-            console.error(err)
-            alert('Erro ao envar mensagem!')
-        }
-    }
+        const promise = fetch("https://backend-portfolio-gilt.vercel.app/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        }).then(async (res) => {
+            const data = await res.json();
+            if (!data.success) throw new Error("Erro ao enviar");
+            return data; // retorno os estado da requsição 
+        })
+
+        toaster.promise(promise, { //pasando a promessa para o toster, oberservando o 3 estado pedding, success, reject
+            loading: { title: "Enviando...", description: "Aguarde um momento" },
+            success: { title: "Mensagem enviada!", description: "Sua mensagem foi enviada com sucesso" },
+            error: { title: "Erro", description: "Erro ao enviar a mensagem" },
+        })
+    };
 
 
     return (
@@ -64,7 +65,7 @@ function Form() {
                             <Field.ErrorText>{errors.email?.message}</Field.ErrorText>
                         </Field.Root>
                         <Field.Root invalid={!!errors.message}>
-                            <Field.Label>Assunto</Field.Label>
+                            <Field.Label>Mensagem</Field.Label>
                             <Textarea
                                 variant="subtle"
                                 placeholder="Digite o assunto"
@@ -76,6 +77,7 @@ function Form() {
                     </Stack>
                 </form>
             </Stack>
+            <Toaster />
         </Flex>
     )
 }
