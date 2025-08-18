@@ -45,10 +45,10 @@ export const projetos: Projeto[] = [
       "Rápida criação de currículo"
     ],
     linkGithub: "https://github.com/Ghabriel-Silva/gerador-cv",
-    linkProjeto: "https://github.com/Ghabriel-Silva/gerador-cv"
+    linkProjeto: "https://ghabriel-silva.github.io/gerador-cv/"
   },
   {
-    imgCard: ["uxui"],
+    imgCard: ["esyfood"],
     titleDescription: "Easy Food",
     textDescription: "Software",
     iconDescriptionText: "Ver Projeto",

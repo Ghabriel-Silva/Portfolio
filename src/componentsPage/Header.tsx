@@ -59,7 +59,7 @@ function Header() {
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#projetos">Projetos</Link>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#skills">Skills</Link>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#cardsblogs">Blog</Link>
-            <Link {...linkBaseStyle} onClick={handleToCloset} href="#">Contato</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#contato">Contato</Link>
         </Stack>
 
     )
