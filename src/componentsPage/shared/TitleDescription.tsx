@@ -2,8 +2,8 @@ import { Stack, Text, Heading } from "@chakra-ui/react"
 
 
 interface Props {
-    title: string
-    text: string
+    text?: string
+    title?: string
 }
 
 function TitleDescription({ title, text }: Props) {

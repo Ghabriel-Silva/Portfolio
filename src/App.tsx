@@ -1,5 +1,5 @@
 //Componentes do chakra ui
-import { Box, Flex, Center, Spinner,  Text, VStack} from "@chakra-ui/react"
+import { Box, Flex, Center, Spinner, Text, VStack } from "@chakra-ui/react"
 
 import { useEffect, useState } from "react"
 
@@ -14,7 +14,8 @@ import RotatingIcons from "@/componentsPage/iconsAnimate/RotatingIcons"
 import ContainerCardsBlogs from "@/componentsPage/blogCard/ContainerCardsBlogs"
 import Form from "@/componentsPage/formContato/Form"
 import Section from "@/Section"
-import Footer from "./componentsPage/Footer"
+import Footer from "@/componentsPage/Footer"
+import ContainerGraficos from "@/componentsPage/graficos/ContainerGraficos"
 
 
 
@@ -23,12 +24,13 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false)
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2000) 
 
-  window.addEventListener("load", handleLoad)
-  return ()=> window.removeEventListener("load", handleLoad)
-
+    return () => clearTimeout(timer) // limpa se desmontar o componente
   }, [])
+
 
   if (loading) {
     return (
@@ -56,7 +58,8 @@ function App() {
         <Section><CodeAnimation /></Section>
         <Section id="Rotating"><RotatingIcons /></Section>
         <Section id="projetos"><CardContainer /></Section>
-        <Section id="skills"><ContainerSkils /></Section>
+        <Section id="habilidades"><ContainerSkils /></Section>
+        <Section id="insights" ><ContainerGraficos/></Section>
         <Section id="acordeao"><Acordeao /></Section>
         <Section id="cardsblogs"><ContainerCardsBlogs /></Section>
         <Section id="contato"><Form /></Section>

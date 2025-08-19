@@ -2,7 +2,9 @@
 import AvatarUser from "@/componentsPage/shared/Avatar"
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text, useToken } from "@chakra-ui/react"
+import { FiChevronDown } from "react-icons/fi"
+import { Stack, HStack, Link, useMediaQuery, Icon, CloseButton, Drawer, Portal, Text, useToken, Menu } from "@chakra-ui/react"
+
 
 
 
@@ -30,9 +32,9 @@ function Header() {
     const [open, setOpen] = useState(false)
 
     //Estado para mudança de open to closet
-    function handleToCloset():void{
+    function handleToCloset(): void {
         setOpen(false)
-        
+
     }
 
 
@@ -53,11 +55,28 @@ function Header() {
             direction={isMobile ? "column" : "row"}
             gap={isMobile ? 12 : 9}
             mt={isMobile ? 8 : 0}
-            textAlign={isMobile ? "center" : "center"}
+            textAlign={isMobile ? "start" : "center"}
         >
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#home"> Home</Link>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#projetos">Projetos</Link>
-            <Link {...linkBaseStyle} onClick={handleToCloset} href="#skills">Skills</Link>
+
+            <Menu.Root >
+                <Menu.Trigger asChild>
+                    <HStack  cursor="pointer" border="none"  >
+                        <Text {...linkBaseStyle}>Skills</Text>
+                        <FiChevronDown  />
+                    </HStack>
+                </Menu.Trigger>
+                <Portal>
+                    <Menu.Positioner>
+                        <Menu.Content zIndex={1400}>
+                            <Menu.Item value="new-txt"> <Link {...linkBaseStyle} onClick={handleToCloset} href="#habilidades">Habilidades</Link></Menu.Item>
+                            <Menu.Item value="new-txt"> <Link {...linkBaseStyle} onClick={handleToCloset} href="#insights">Insights</Link></Menu.Item>
+                            <Menu.Item value="new-txt"> <Link {...linkBaseStyle} onClick={handleToCloset} href="#acordeao">Perguntas e Respostas</Link></Menu.Item>
+                        </Menu.Content>
+                    </Menu.Positioner>
+                </Portal>
+            </Menu.Root>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#cardsblogs">Blog</Link>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#contato">Contato</Link>
         </Stack>
@@ -101,7 +120,7 @@ function Header() {
                                     </Drawer.Body>
                                     <Drawer.Footer>
                                         <Text fontSize="sm" color="gray.500">
-                                            Versão 1.0 • Portfólio Gabriel Silva
+                                            Versão 1.0 • Portfólio Gabriel Silva/ Utilma atualização 19/08/2025
                                         </Text>
                                     </Drawer.Footer>
                                     <Drawer.CloseTrigger asChild>
