@@ -1,45 +1,52 @@
 import { Box, Image } from "@chakra-ui/react"
 
+import { Carousel } from "@chakra-ui/react"
+import { image, type imageProjetos } from "./imageCardsIndex"
 
-import imgqualis from "@/assets/imgProjetos/qualys.png"
-import imggeraCv from "@/assets/imgProjetos/curriculo.png"
-import imgmaquiadora from "@/assets/imgProjetos/image-card-projetos-ketlin.png"
-import imgeasy from "@/assets/imgProjetos/easyfood.png"
-
-const image = {
-  qualis: { src: imgqualis, alt: "Imagem do projeto Qualis 5S" },
-  c: { src: imggeraCv, alt: "Imagem do projeto Gera CV" },
-  maquiadora: { src: imgmaquiadora, alt: "Imagem do projeto Ketlin Maquiadora" },
-  esyfood: { src: imgeasy, alt: "Imagem do projeto easy food" },
-} as const; // congela o objeto para manter valores literais e chaves exatas.
-
-export type imageProjetos = keyof typeof image
 
 interface PropsImage {
   imagem: imageProjetos[]
 }
 
-function imgContain({ imagem }: PropsImage) {
+function ImgContain({ imagem }: PropsImage) {
   return (
-    <Box borderTopRadius="lg" cursor="pointer" >
-      {imagem.map((imgKey) => {
-        const imgPropiedades = image[imgKey]
-        return (
-          <Image
-            w="100%"
-            h="100%"
-            objectFit="cover"
-            objectPosition="center"
-            
-            key={imgKey}
-            src={imgPropiedades.src}
-            alt={imgPropiedades.alt}
-            borderRadius={"lg"}
-          ></Image>
-        )
-      })}
+    <Box borderTopRadius="lg" overflow="hidden" >
+      <Carousel.Root
+        loop={true}
+        slideCount={imagem.length}
+        allowMouseDrag={true}
+        autoplay={true}
+      
+        w="100%"
+        position="relative"
+      >
+        {/* Slides */}
+        <Carousel.ItemGroup>
+          {imagem.map((imgKey, index) => {
+            const imgProp = image[imgKey]
+
+            return (
+              <Carousel.Item key={imgKey} index={index}>
+                <Image
+                  w="100%"
+                  h="auto"
+                  objectFit="cover"
+                  src={imgProp.src}
+                  alt={imgProp.alt}
+                
+                />
+              </Carousel.Item>
+            )
+          })}
+        </Carousel.ItemGroup>
+
+
+        <Carousel.Control justifyContent="center" gap="4">
+          <Carousel.Indicators />
+        </Carousel.Control>
+      </Carousel.Root>
     </Box>
   )
 }
 
-export default imgContain
+export default ImgContain

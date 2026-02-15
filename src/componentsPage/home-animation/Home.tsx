@@ -10,7 +10,7 @@ function home() {
         <Flex  gap="4" direction="column"  align="center"  my="12">
             <Text fontSize="md" fontWeight="semibold" mt="36px" >Olá, meu nome é Gabriel</Text>
             <TextAnimation  role1="" role2="Developer" role3="FullStack" role4="UI Design" role5="Web Coffee" />
-            <Text textAlign="center" fontSize={{base:"sm", md: "lg", lg:"xl"}} fontStyle="normal" fontWeight="normal">Estudante de Engenharia de Software com conhecimentos em desenvolvimento full stack, Figma, React, JavaScript, TypeScript, Express e MySQL.</Text>
+            <Text textAlign="center" fontSize={{base:"sm", md: "lg", lg:"xl"}} fontStyle="normal" fontWeight="normal">Full Stack Developer | JavaScript/TypeScript, Node.js, React, Next.js e SQL</Text>
             <Box mt="4">
                 <ButtonG text="Baixar Cv"  />
             </Box>

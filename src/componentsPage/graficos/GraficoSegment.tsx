@@ -4,10 +4,8 @@ const GraficoSegment = () => {
     const chart = useChart({
         sort: { by: "value", direction: "desc" },
         data: [
-            { name: "JavaScript", value: 5, color: "yellow.400" },
-            { name: "TypeScript", value: 1, color: "blue.400" },
-            { name: "CSS", value: 1, color: "teal.400" },
-            { name: "Other", value: 1, color: "purple.200" },
+            { name: "JavaScript", value: 3, color: "yellow.400" },
+            { name: "TypeScript", value: 4, color: "blue.400" },
         ],
     })
 

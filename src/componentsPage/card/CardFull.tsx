@@ -14,7 +14,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 //Importação do Tipo literal 
 import type { TechnologyKey } from "@/componentsPage/card/IconsDescription"
-import type { imageProjetos } from "@/componentsPage/card/imgContain"
+import type { imageProjetos } from "@/componentsPage/card/imageCardsIndex"
 
 interface Props {
     imgCard: imageProjetos[]
@@ -27,10 +27,10 @@ interface Props {
     linkGithub?: string
     linkProjeto?: string
     defaultText?: string
-    mostrarBotao?: boolean
+
 }
 
-function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, textDescription, textDialog, funcionalidades, linkGithub, linkProjeto, mostrarBotao, defaultText = "Projeto" }: Props) {
+function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, textDescription, textDialog, funcionalidades, linkGithub, linkProjeto, defaultText = "Projeto" }: Props) {
     const [open, setOpen] = useState(false)
     return (
         <>
@@ -101,14 +101,14 @@ function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, text
                                 </Stack>
                             </Dialog.Body>
 
-                            {mostrarBotao && (
-                                <Dialog.Footer
-                                    gap="3"
-                                    px={6}
-                                    py={4}
-                                    borderTop="1px solid"
-                                    borderColor="gray.200"
-                                >
+                            <Dialog.Footer
+                                gap="3"
+                                px={6}
+                                py={4}
+                                borderTop="1px solid"
+                                borderColor="gray.200"
+                            >
+                                {linkGithub && (
                                     <Link href={linkGithub} target="_blank">
                                         <Button
                                             variant="outline"
@@ -127,6 +127,9 @@ function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, text
                                             Código
                                         </Button>
                                     </Link>
+                                )}
+
+                                {linkProjeto && (
                                     <Link href={linkProjeto} target="_blank">
                                         <Button
                                             variant="outline"
@@ -145,8 +148,9 @@ function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, text
                                             Ver Projeto
                                         </Button>
                                     </Link>
-                                </Dialog.Footer>
-                            )}
+                                )}
+                            </Dialog.Footer>
+
 
                         </Dialog.Content>
                     </Dialog.Positioner>

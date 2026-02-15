@@ -53,11 +53,12 @@ function Header() {
     const navLinks = (
         <Stack
             direction={isMobile ? "column" : "row"}
-            gap={isMobile ? 12 : 9}
+            gap={isMobile ? 12 : {lg:9, md:6, sm:4}}
             mt={isMobile ? 8 : 0}
             textAlign={isMobile ? "start" : "center"}
         >
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#home"> Home</Link>
+            <Link {...linkBaseStyle} onClick={handleToCloset} href="#Sobre">Sobre</Link>
             <Link {...linkBaseStyle} onClick={handleToCloset} href="#projetos">Projetos</Link>
 
             <Menu.Root >

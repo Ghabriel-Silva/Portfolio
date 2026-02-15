@@ -16,6 +16,7 @@ import Form from "@/componentsPage/formContato/Form"
 import Section from "@/Section"
 import Footer from "@/componentsPage/Footer"
 import ContainerGraficos from "@/componentsPage/graficos/ContainerGraficos"
+import { About } from "./componentsPage/About/About"
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Section id="home"><Home /></Section>
         <Section><CodeAnimation /></Section>
         <Section id="Rotating"><RotatingIcons /></Section>
+        <Section id="Sobre"><About/> </Section>
         <Section id="projetos"><CardContainer /></Section>
         <Section id="habilidades"><ContainerSkils /></Section>
         <Section id="insights" ><ContainerGraficos/></Section>
@@ -64,9 +66,7 @@ function App() {
         <Section id="cardsblogs"><ContainerCardsBlogs /></Section>
         <Section id="contato"><Form /></Section>
       </Box>
-
       <Footer />
-
     </Flex>
   )
 }

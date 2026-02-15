@@ -6,12 +6,12 @@ const Grafico = () => {
         sort: { by: "value", direction: "desc" },
         data: [
             { name: "Figma", value: 90 },
-            { name: "HTML & CSS", value: 80 },
-            { name: "JavaScript", value: 70 },
+            { name: "HTML & CSS", value: 90 },
+            { name: "JavaScript", value: 80 },
             { name: "Git & GitHub", value: 70 },
-            { name: "Express.js", value: 50 },
-            { name: "TypeScript", value: 40 },
-            { name: "React", value: 60 },
+            { name: "Express.js", value: 80 },
+            { name: "TypeScript", value: 80 },
+            { name: "React/Next", value: 80 },
         ],
         series: [{ name: "name", color: "teal.subtle" }],
 
