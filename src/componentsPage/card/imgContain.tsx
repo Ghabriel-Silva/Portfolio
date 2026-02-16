@@ -12,15 +12,14 @@ function ImgContain({ imagem }: PropsImage) {
   return (
     <Box borderTopRadius="lg" overflow="hidden" >
       <Carousel.Root
+
         loop={true}
         slideCount={imagem.length}
-        allowMouseDrag={true}
-        autoplay={true}
-      
+       
+        autoplay={{ delay: 2000 }}
         w="100%"
         position="relative"
       >
-        {/* Slides */}
         <Carousel.ItemGroup>
           {imagem.map((imgKey, index) => {
             const imgProp = image[imgKey]
@@ -33,16 +32,15 @@ function ImgContain({ imagem }: PropsImage) {
                   objectFit="cover"
                   src={imgProp.src}
                   alt={imgProp.alt}
-                
+
                 />
               </Carousel.Item>
             )
           })}
         </Carousel.ItemGroup>
-
-
         <Carousel.Control justifyContent="center" gap="4">
-          <Carousel.Indicators />
+          <Carousel.Indicators
+          />
         </Carousel.Control>
       </Carousel.Root>
     </Box>

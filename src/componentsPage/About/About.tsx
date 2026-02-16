@@ -22,25 +22,25 @@ export const About = () => {
             <Stack
                 direction={{ base: "column", lg: "row" }}
                 gap={{ base: "12", lg: "20" }}
-                align="flex-start" // Texto agora começa do topo
+                align="flex-start"
                 justify="space-between"
             >
-                {/* LADO ESQUERDO: Conteúdo Matador */}
-                <Box flex="1.2" textAlign="left">
+
+                <Box flex="1.2" textAlign="left" >
                     <Heading size={{ base: "3xl", md: "5xl" }} fontWeight="bold" mb="6" >
                         Sobre.
                     </Heading>
 
                     <Stack gap="4" color="gray.600" fontSize="md" lineHeight="tall">
-                        <Text>
+                        <Text color="gray.fg">
                             Me chamo Gabriel, tenho 24 anos e desde 2023 estou em transição para a área de desenvolvimento de software. Atualmente curso Engenharia de Software e trabalho com o ecossistema JavaScript, utilizando tecnologias como TypeScript, Node.js, React e bancos de dados SQL.
                         </Text>
 
-                        <Text>
+                        <Text color="gray.fg">
                             Hoje desenvolvo projetos completos, além de implementar integrações e melhorias em sistemas existentes. Tenho experiência prática na construção de aplicações e busco atuar como desenvolvedor Full Stack, Back-end ou Front-end.
                         </Text>
 
-                        <Text>
+                        <Text color="gray.fg">
                             Procuro oportunidades onde eu possa aplicar meus conhecimentos em projetos reais, evoluir profissionalmente e contribuir com soluções eficientes e bem estruturadas.
                         </Text>
                         <Text fontSize="sm" fontStyle="italic" color="gray.500" borderTop="1px solid" borderColor="gray.100" pt="4">
@@ -48,7 +48,7 @@ export const About = () => {
                         </Text>
 
                         <Box py="4">
-                            <Text fontWeight="bold" mb="3" color="gray.700">Principais tecnologias:</Text>
+                            <Text fontWeight="bold" mb="3" color="gray.fg" >Principais tecnologias:</Text>
                             <Wrap gap="2">
                                 {techStack.map((tech) => (
                                     <Badge key={tech} variant="subtle" colorScheme="blue" px="2" py="1" rounded="md">
@@ -62,15 +62,16 @@ export const About = () => {
                     </Stack>
                 </Box>
 
-                {/* LADO DIREITO: Marquee Visual */}
+
                 <Box
+                
                     flex="0.8"
                     height="600px"
                     overflow="hidden"
                     perspective="1200px"
                     width="100%"
                     position="relative"
-                    display={{ base: "none", md: "block" }} // Oculta em telas muito pequenas para focar no texto
+                    display={{ base: "none", md: "block" }}
                 >
                     <Stack
                         direction="row"
@@ -90,20 +91,12 @@ export const About = () => {
 
                         <Marquee.Root side="bottom" flex="1" autoFill>
                             <Marquee.Viewport>
-                                <Marquee.Content>
+                                <Marquee.Content >
                                     <MarqueeItems images={imagesColumn2} />
                                 </Marquee.Content>
                             </Marquee.Viewport>
                         </Marquee.Root>
                     </Stack>
-
-                    {/* Gradientes para "sumir" com as bordas do card e dar profundidade */}
-                    <Box
-                        position="absolute"
-                        inset="0"
-                        pointerEvents="none"
-                        bgGradient="linear(to-b, background 0%, transparent 20%, transparent 80%, background 100%)"
-                    />
                 </Box>
             </Stack>
         </Container>
@@ -139,7 +132,7 @@ const imagesColumn1 = [
 ]
 
 const imagesColumn2 = [
-    image8, 
+    image8,
     image9,
     image6,
     image7

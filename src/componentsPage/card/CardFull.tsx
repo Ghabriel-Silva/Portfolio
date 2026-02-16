@@ -36,7 +36,7 @@ function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, text
         <>
             <Dialog.Root lazyMount open={open} onOpenChange={(e) => setOpen(e.open)} placement={"center"} >
                 <Dialog.Trigger asChild>
-                    <Flex bg="bg.muted" direction="column" minW={{ base: "220px", md: "290px" }} flex="1" borderRadius="lg" shadow="sm" transition="all 0.3s ease"
+                    <Flex bg="bg.subtle"  direction="column" minW={{ base: "220px", md: "290px" }} flex="1" borderRadius="lg" shadow="sm" transition="all 0.3s ease"
                         _hover={{
                             transform: "translateY(-4px) rotate(-0.5deg)",
                             boxShadow: "xl",
@@ -45,12 +45,13 @@ function CardFull({ imgCard, iconDescriptionTechnologies, titleDescription, text
                             transform: "translateY(-4px) rotate(-0.5deg)",
                             boxShadow: "xl",
                         }}
+                        cursor={"pointer"}
                     >
                         <ImgContain imagem={imgCard} />
                         <Tag.Root bg="purple.emphasized" color="white" size="lg" variant="solid" w="fit-content" borderBottomRadius={"md"} borderTopRadius="none" >
                             <Tag.Label>{defaultText} </Tag.Label>
                         </Tag.Root>
-                        <Stack gap="2" p="4" borderBottomRadius="lg" >
+                        <Stack gap="2" p="4" borderBottomRadius="lg"  >
                             <TitleDescriptionCard title={titleDescription} text={textDescription} />
                             <IconsDescription technologies={iconDescriptionTechnologies} />
                         </Stack>
